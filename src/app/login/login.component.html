@@ -1,0 +1,38 @@
+﻿
+<top-menu></top-menu>    
+<div class="col-md-6 col-md-offset-3">
+        {{greetMessage}}
+    <mat-card id="loginCard">
+            <mat-card-title>Login</mat-card-title>
+                
+        <img mat-card-image src="../assets/images/login.jpg" >
+             
+        <mat-card-title-group >
+                     <mat-card-subtitle> Username: test
+                        <br>
+                         Password: test</mat-card-subtitle>
+                 </mat-card-title-group>
+                <mat-card-content>
+                       
+                        <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="loginForm">
+                                <mat-form-field [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                                        <input matInput placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel" required>
+                                        <mat-error *ngIf="f.submitted && !username.valid">Username is required</mat-error>
+                                </mat-form-field> 
+                                <mat-form-field [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                                        <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+                                        <mat-error *ngIf="f.submitted && !password.valid" >Password is required</mat-error>
+                                </mat-form-field>
+                               
+                                <div class="form-group">
+                                        <button [disabled]="loading" mat-raised-button color="primary">Login</button>
+                                        <mat-spinner *ngIf="loading" class="mainLoader"></mat-spinner>
+                                </div>
+                                <mat-error *ngIf="error" >{{error}}</mat-error>
+                        </form>
+    
+                </mat-card-content>
+              </mat-card>
+    
+    
+</div>

@@ -1,0 +1,20 @@
+.topMenu{
+    padding: 10px;
+    height: 80px
+}
+.topMenu_rightText {
+    /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+      flex: 1 1 auto;
+        text-align:right 
+    }
+
+.topMenuLogo{width: 100px}
+
+.mat-select{width: 10%}
+:host >>> .mat-select-placeholder, 
+:host >>> .mat-select-value,
+:host >>> .mat-select-arrow
+ {color:white}
+
+

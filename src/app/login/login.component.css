@@ -1,0 +1,12 @@
+
+#loginCard{
+    max-width: 30%;
+    margin:0 auto;
+}
+.loginForm{display: flex;
+    flex-direction: column;}
+.mainLoader{
+    position: absolute;
+    top:50%;
+    left:35%;
+}
