@@ -1,4 +1,4 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../_models/index';
 import { UserService } from '../_services/index';
 
@@ -10,18 +10,14 @@ import { UserService } from '../_services/index';
 
 export class HomeComponent implements OnInit {
     users: User[] = [];
-    shouldRun:boolean;
-    constructor(private userService: UserService) { }
-
+    constructor(private userService: UserService) {
+        this.users=this.userService.users
+        }
     ngOnInit() {
         // get users from secure api end point
-        this.userService.getUsers()
-            .subscribe(users => {
-                this.users = users;
-            });
-               
+            this.userService.getUsers() 
+            console.log(this.users)              
+        
         }
-        ondrawerclick(agreed: boolean) {
-            this.shouldRun=!agreed ? true : false;
-          }
+       
       }

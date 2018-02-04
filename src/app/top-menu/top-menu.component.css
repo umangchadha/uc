@@ -6,15 +6,15 @@
     /* This fills the remaining space, by using flexbox. 
      Every toolbar row uses a flexbox row layout. */
       flex: 1 1 auto;
-        text-align:right 
+      text-align:right 
     }
 
 .topMenuLogo{width: 100px}
 
-.mat-select{width: 10%}
+.mat-select{max-width: 120px}
 :host >>> .mat-select-placeholder, 
 :host >>> .mat-select-value,
 :host >>> .mat-select-arrow
  {color:white}
 
-
+:host >>> .drawerShadow{box-shadow: 0 0 10px 1px rgba(0,0,0,.2)!important;background: transparent}

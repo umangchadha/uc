@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     error = '';
-    @Input() greetMessage: string ;
     constructor(
         private router: Router,
         private authenticationService: AuthenticationService) { }

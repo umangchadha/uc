@@ -1,4 +1,8 @@
 <mat-toolbar color="primary" class="topMenu">
+ 
+    <button mat-mini-fab color="primary"class="drawerShadow" *ngIf="userinfo" (click)="drawerClick()">
+        <i class="fa" [ngClass]="{'fa-times': isclicked, 'fa-bars': !isclicked}"></i>
+    </button>
   <img src="../../assets/images/logo.png" class="topMenuLogo" alt="Vemy logo">
 
        
@@ -10,12 +14,5 @@
             </mat-option>
             <mat-option value="logout"><a [routerLink]="['/login']">Logout</a></mat-option>
           </mat-select>
-       
-            
-             <button mat-mini-fab color="primary" *ngIf="userinfo" (click)="drawerClick()">
-              <i class="fa" [ngClass]="{'fa-times': isclicked, 'fa-bars': !isclicked}"></i>
-          </button>
-
-        </span>   
-          
+        </span>         
   </mat-toolbar>
