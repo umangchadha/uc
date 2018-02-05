@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable,Subject } from 'rxjs';
 import 'rxjs/add/operator/map'
 
 import { AuthenticationService } from './index';
@@ -8,11 +8,15 @@ import { User } from '../_models/index';
 
 @Injectable()
 export class UserService {
-    constructor(
+    
+    users;
+
+        constructor(
         private http: Http,
         private authenticationService: AuthenticationService) {
-    }
-    users;
+    
+        }
+        
     getUsers(): Observable<User[]> {
         // add authorization header with jwt token
         let headers = new Headers({ 'Authorization': 'Bearer ' + this.authenticationService.token });
@@ -22,11 +26,16 @@ export class UserService {
        this.http.get('/api/users', options)
        .map((response: Response) => response.json())
        .subscribe(users => {this.users=users 
-              console.log(this.users)} );
+              } );
      
 
      
-       return this.users
+            return this.users;
     }
+
+    logout(){
+      this.users=undefined  
+    }
+
 
 }

@@ -13,12 +13,12 @@ import { AuthenticationService, UserService } from '../_services/index';
 })
 export class TopMenuComponent implements OnInit {
 
-  @Input() userinfo;
+
   @Output() ondrawerclick= new EventEmitter<boolean>();
 
 isclicked:boolean=true;
 icoo="fa-bars";
-  constructor(private users:UserService) { }
+  constructor(private userService:UserService) { }
 
   ngOnInit() {}
 

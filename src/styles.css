@@ -3,4 +3,10 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~font-awesome/css/font-awesome.css";
 
-body{padding: 0;margin:0}
+body{padding: 0;margin:0;
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;}
+
+    .contentHeading {padding: 10px; background: #3f51b5;
+    }
+    .contentHeading h1{ font-size:1.25em;font-weight: 300; color:white}
+    

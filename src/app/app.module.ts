@@ -1,4 +1,6 @@
-﻿import { NgModule }      from '@angular/core';
+﻿import { AntiauthService } from './_guards/antiauth.service';
+import { AuthGuard } from './_guards/auth.guard';
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -11,7 +13,6 @@ import { BaseRequestOptions } from '@angular/http';
 import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
 
-import { AuthGuard } from './_guards/index';
 import { AuthenticationService, UserService } from './_services/index';
 import { LoginComponent } from './login/index';
 import { HomeComponent } from './home/index';
@@ -21,7 +22,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 
 //used for material design 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatAutocompleteModule,
+import {
+     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
@@ -52,17 +54,16 @@ import { MatAutocompleteModule,
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule } from '@angular/material';
-
-
+import { MembersComponent } from './members/members.component';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        routing,
-        BrowserAnimationsModule,
-        MatAutocompleteModule,
+imports: [
+  BrowserModule,
+  FormsModule,
+  HttpModule,
+  routing,
+  BrowserAnimationsModule,
+  MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,
   MatCardModule,
@@ -98,13 +99,14 @@ import { MatAutocompleteModule,
         AppComponent,
         LoginComponent,
         HomeComponent,
-        TopMenuComponent
+        TopMenuComponent,
+        MembersComponent
     ],
     providers: [
         AuthGuard,
         AuthenticationService,
         UserService,
-
+        AntiauthService,
         // providers used to create fake backend
         fakeBackendProvider,
         MockBackend,
