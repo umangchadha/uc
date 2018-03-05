@@ -1,0 +1,16 @@
+  .demo-content{
+    padding: 15px;
+    font-size: 18px;
+    min-height: 300px;
+    margin-bottom: 10px;
+  
+  }
+
+h3{color:white}
+
+.green{background: #019d6b}
+.pink{background: #ff4081}
+.blue{background: #007bff}
+.red{background: #dc3545}
+.orange{background:#f44336}
+.purple{background: #d040ff}

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '~bootstrap/dist/css/bootstrap.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~font-awesome/css/font-awesome.css";
 
@@ -9,4 +9,3 @@ body{padding: 0;margin:0;
     .contentHeading {padding: 10px; background: #3f51b5;
     }
     .contentHeading h1{ font-size:1.25em;font-weight: 300; color:white}
-    

@@ -1,6 +1,6 @@
 
 #loginCard{
-    max-width: 30%;
+    max-width: 300px;
     margin:0 auto;
 }
 .loginForm{display: flex;

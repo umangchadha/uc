@@ -1,0 +1,56 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+$mat-vemy: (
+  50: #eaf5fa,
+  100: #c8ecfc,
+  200: #06aef7,
+  300: #22b1ee,
+  400: #09a1e2,
+  500: #1e9dd3,
+  600: #0597d6,
+  700: #1289bd,
+  800: #0385bd,
+  900: #016d9d,
+  A100: #018b9d,
+  A200: #019d90,
+  A400: #186769,
+  A700: #0d4d61,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+$my-app-primary: mat-palette($mat-vemy,900);
+$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn:    mat-palette($mat-deep-orange);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+.alternate-theme {
+  $alternate-primary: mat-palette($mat-light-blue);
+  $alternate-accent:  mat-palette($mat-yellow, 400);
+
+  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+
+  @include angular-material-theme($alternate-theme);
+}
+
+
+

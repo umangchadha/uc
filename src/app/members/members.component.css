@@ -1,0 +1,17 @@
+
+.mat-form-field {
+    margin:0 20px;
+    font-size: 1.25em;
+  }
+
+  .mat-table {
+    overflow: auto;
+    max-height: 300px;
+  }
+ 
+  .mat-column-select {
+    overflow: initial;
+  }
+.tableActions{width: 18%}
+.profileLink{color:rgb(44, 68, 179); text-decoration: underline; cursor: pointer}
+

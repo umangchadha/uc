@@ -12,13 +12,18 @@ import { UserService } from './_services/index';
 
 export class AppComponent { 
     users=[];
-    
+    isclicked:boolean=false    
     constructor(private user:UserService){}
 
-    shouldRun:boolean=true;
+    shouldRun:boolean=false;
     ondrawerclick(agreed: boolean) {
         this.shouldRun=!agreed ? true : false;
+        this.isclicked=!this.isclicked;
+    }
+    
+      close(){
+          
+        this.isclicked=false;
       }
-      
     
 }

@@ -1,0 +1,80 @@
+<div>
+    <div class="contentHeading" color="primary">
+        <h1>Members</h1>
+    </div>
+
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+
+    <mat-select  *ngIf="somerowselected" placeholder="Select Action" class="tableActions">
+            <mat-option value="delete">
+              Delete
+            </mat-option>
+            <mat-option  value="activate">
+              Activate
+              </mat-option>
+              <mat-option  value="deactivate">
+                  Deactivate
+                  </mat-option>
+
+      </mat-select>
+
+
+ <mat-table #table [dataSource]="dataSource" matSort>
+
+    <!-- Checkbox Column -->
+ <ng-container matColumnDef="select">
+    <mat-header-cell *matHeaderCellDef>
+      <!-- <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox> -->
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null;checkClicked()"
+                    [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </mat-cell>
+  </ng-container>
+    <!-- id Column -->
+    <ng-container matColumnDef="ID">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> NAME </mat-header-cell>
+      <mat-cell *matCellDef="let element"><a [routerLink]="['/profile']" class="profileLink" (click)="pass.linkClicked($event.target.innerText)"> {{element.first_name + " "+ element.last_name}}  </a> </mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> EMAIL </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <!-- GEnder Column -->
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> GENDER </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
+    </ng-container>
+
+    <!-- Ip Column -->
+    <ng-container matColumnDef="ip">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> IP </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ip_address}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"
+             (click)="selection.toggle(row)">
+    </mat-row>
+  </mat-table>
+  <mat-paginator #paginator
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 20]">
+</mat-paginator>
+</div>

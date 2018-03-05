@@ -1,4 +1,5 @@
-﻿import { AntiauthService } from './_guards/antiauth.service';
+﻿import { LinkDataService } from './_services/link-data.service';
+import { AntiauthService } from './_guards/antiauth.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +24,7 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 //used for material design 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-     MatAutocompleteModule,
+    MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
@@ -55,6 +56,7 @@ import {
     MatTooltipModule,
     MatStepperModule } from '@angular/material';
 import { MembersComponent } from './members/members.component';
+import { MemberProfileComponent } from './member-profile/member-profile.component';
 
 @NgModule({
 imports: [
@@ -100,13 +102,15 @@ imports: [
         LoginComponent,
         HomeComponent,
         TopMenuComponent,
-        MembersComponent
+        MembersComponent,
+        MemberProfileComponent
     ],
     providers: [
         AuthGuard,
         AuthenticationService,
         UserService,
         AntiauthService,
+        LinkDataService,
         // providers used to create fake backend
         fakeBackendProvider,
         MockBackend,

@@ -1,14 +1,14 @@
 import { AuthPage } from './app.po';
 
-describe('auth App', () => {
+describe('auth App', function() {
   let page: AuthPage;
 
   beforeEach(() => {
     page = new AuthPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

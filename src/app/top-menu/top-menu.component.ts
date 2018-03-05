@@ -16,8 +16,8 @@ export class TopMenuComponent implements OnInit {
 
   @Output() ondrawerclick= new EventEmitter<boolean>();
 
-isclicked:boolean=true;
-icoo="fa-bars";
+ @Input() isclicked:boolean
+
   constructor(private userService:UserService) { }
 
   ngOnInit() {}
@@ -25,7 +25,7 @@ icoo="fa-bars";
    drawerClick(){
      
        this.isclicked=!this.isclicked;
-      !this.isclicked?this.icoo="fa-bell-o":this.icoo;
+      
        this.ondrawerclick.emit(!this.isclicked);
     
     }
